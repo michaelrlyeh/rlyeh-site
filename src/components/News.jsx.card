@@ -1,0 +1,53 @@
+import { useEffect, useState } from 'react';
+
+export default function News() {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    console.log('Chargement News.jsx OK');
+
+    async function fetchNews() {
+      try {
+        const response = await fetch('http://51.68.36.142:8055/items/news');
+        const data = await response.json();
+        console.log('Réponse Directus (fetch simple):', data);
+
+        if (data.data) {
+          setNews(data.data);
+        }
+      } catch (error) {
+        console.error('Erreur de chargement des news:', error);
+      }
+    }
+
+    fetchNews();
+  }, []);
+
+  return (
+    <>
+      {news.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {news.map((item) => (
+            <div key={item.id} className="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+              {item.image && (
+                <img
+                  src={`http://51.68.36.142:8055/assets/${item.image}`}
+                  alt={item.Title}
+                  className="w-full h-60 object-cover rounded-t-xl"
+                />
+              )}
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2">{item.Title || '(Sans titre)'}</h3>
+                <p dangerouslySetInnerHTML={{ __html: item.content || '(Pas de texte)' }}></p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center text-gray-500 dark:text-gray-400">
+          Aucune actualité disponible pour le moment.
+        </div>
+      )}
+    </>
+  );
+}

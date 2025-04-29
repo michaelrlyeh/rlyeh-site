@@ -1,0 +1,13 @@
+# Ignorer le build final
+/dist
+
+# Node.js modules
+/node_modules
+
+# Cache, erreurs, logs
+*.log
+.vite
+.DS_Store
+
+# IDE (Visual Studio Code)
+.vscode

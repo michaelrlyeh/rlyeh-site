@@ -29,3 +29,9 @@ Ce projet utilise le format **SemVer** :
 - 🎯 Optimisation SEO avancée
 - 🎨 Refonte légère du formulaire pour un meilleur UX
 - 🚀 Déploiement automatique via GitHub Actions (optionnel)
+
+## [1.0.1] - 2025-04-28
+
+- Injection automatique de la version Git + commit dans le footer
+- Ajout d'un fichier CHANGELOG.md
+- Première préparation du système de versioning

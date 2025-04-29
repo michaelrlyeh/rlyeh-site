@@ -1,6 +1,0 @@
-# Autoriser tous les robots à explorer tout le site
-User-agent: *
-Allow: /
-
-# Indiquer le sitemap (facultatif si tu en as un plus tard)
-Sitemap: https://www.rlyeh.fr/sitemap.xml

@@ -1,3 +1,5 @@
+// === src/components/ConsentBanner.jsx ===
+
 import { useEffect, useState } from "react";
 
 export default function ConsentBanner({ lang }) {
@@ -27,11 +29,10 @@ export default function ConsentBanner({ lang }) {
     localStorage.setItem('cookie_consent', 'accepted');
     setVisible(false);
 
-    // Activer Google Analytics après acceptation
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-WWN4PGZNEP'); // Remplace par ton vrai ID Analytics
+    gtag('config', 'G-WWN4PGZNEP'); // Ton ID Google Analytics
   };
 
   const refuseCookies = () => {

@@ -6,8 +6,20 @@ export default function Projet({ lang }) {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen p-8 text-center">
       <Helmet>
-        <title>{lang === 'fr' ? 'Gestion de projet - Rlyeh' : 'Project Management - Rlyeh'}</title>
-        <meta name="description" content="Direction de projet, pilotage, coordination et livraison de vos projets stratégiques." />
+        <title>{lang === 'fr' ? 'Gestion de Projet - Rlyeh' : 'Project Management - Rlyeh'}</title>
+        <meta name="description" content={lang === 'fr'
+          ? "Direction de projet, gestion budgétaire et coordination de prestataires."
+          : "Project direction, budget management, and supplier coordination."
+        } />
+        <link rel="canonical" href="https://www.rlyeh.fr/services/projet" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={lang === 'fr' ? "Gestion de Projet - Rlyeh" : "Project Management - Rlyeh"} />
+        <meta property="og:description" content={lang === 'fr'
+          ? "Pilotage stratégique et gouvernance projet transparente pour vos opérations."
+          : "Strategic project management and transparent governance for your operations."
+        } />
+        <meta property="og:url" content="https://www.rlyeh.fr/services/projet" />
+        <meta property="og:image" content="https://www.rlyeh.fr/img/_img05.webp" />
       </Helmet>
 
       <img src={ImgProjet} alt="Projet" className="w-96 h-auto mb-6 rounded-xl shadow-lg" />
@@ -17,14 +29,14 @@ export default function Projet({ lang }) {
         {lang === 'fr' ? (
           <>
             <p>Rlyeh prend en charge la direction complète de vos projets stratégiques.</p>
-            <p>Nous intervenons dès la définition des besoins, en assurant le pilotage du planning, du budget, et la coordination entre prestataires.</p>
-            <p>Nous vous garantissons une gouvernance projet transparente, adaptée à vos contraintes et objectifs de livraison.</p>
+            <p>Nous assurons la définition des besoins, le pilotage du planning, la gestion du budget et la coordination entre prestataires.</p>
+            <p>Notre gouvernance projet est transparente et adaptée à vos objectifs de livraison.</p>
           </>
         ) : (
           <>
             <p>Rlyeh fully manages your strategic projects.</p>
-            <p>We intervene from the needs definition phase, ensuring planning, budgeting, and coordination among all stakeholders.</p>
-            <p>We guarantee transparent project governance, tailored to your constraints and delivery goals.</p>
+            <p>We handle needs definition, planning, budget management, and provider coordination.</p>
+            <p>Our project governance is transparent and tailored to your delivery objectives.</p>
           </>
         )}
       </div>

@@ -1,6 +1,9 @@
+// === src/components/HomeTiles.jsx ===
+
 import { Link } from 'react-router-dom';
 import ContactForm from "./ContactForm";
 import News from "./News";
+import { Helmet } from 'react-helmet-async';
 import RackAI from '../img/rack_ai.webp';
 import ServicesImage from '../img/services_v1.webp';
 import NewsImage from '../img/news_ai.webp';
@@ -8,7 +11,6 @@ import PictoConseil from '../img/logo_conseil.webp';
 import PictoIngineering from '../img/logo_ingineering.webp';
 import PictoProjet from '../img/logo_projet.webp';
 import React from "react";
-import { Helmet } from 'react-helmet-async';
 
 const HomeTiles = ({ lang }) => {
   const t = {
@@ -20,6 +22,9 @@ const HomeTiles = ({ lang }) => {
       projet: "Projet",
       news: "Actualités",
       contact: "Nous contacter",
+      conseilDesc: "Conception et accompagnement d'infrastructures informatiques.",
+      ingenierieDesc: "Assurez le succès de vos déploiements techniques.",
+      projetDesc: "Direction de projet, gestion des fournisseurs et budget."
     },
     en: {
       welcome: "Welcome",
@@ -29,6 +34,9 @@ const HomeTiles = ({ lang }) => {
       projet: "Project",
       news: "News",
       contact: "Contact us",
+      conseilDesc: "Design and support of IT infrastructures.",
+      ingenierieDesc: "Ensure the success of your technical deployments.",
+      projetDesc: "Project management, supplier management and budget oversight."
     }
   };
 
@@ -39,9 +47,9 @@ const HomeTiles = ({ lang }) => {
       title: t[lang].services,
       bg: false,
       subsections: [
-        { title: t[lang].conseil, icon: PictoConseil, path: "/services/conseil" },
-        { title: t[lang].ingenierie, icon: PictoIngineering, path: "/services/ingenierie" },
-        { title: t[lang].projet, icon: PictoProjet, path: "/services/projet" }
+        { title: t[lang].conseil, icon: PictoConseil, path: "/services/conseil", desc: t[lang].conseilDesc },
+        { title: t[lang].ingenierie, icon: PictoIngineering, path: "/services/ingenierie", desc: t[lang].ingenierieDesc },
+        { title: t[lang].projet, icon: PictoProjet, path: "/services/projet", desc: t[lang].projetDesc }
       ]
     },
     { id: "actualites", title: t[lang].news, bg: true },
@@ -74,7 +82,6 @@ const HomeTiles = ({ lang }) => {
                 : undefined
             }
           >
-
             <h2 className="relative z-10 text-6xl mb-4 text-white" style={{ textShadow: "2px 2px 8px black" }}>
               {tile.title}
             </h2>
@@ -92,6 +99,9 @@ const HomeTiles = ({ lang }) => {
                     <div className="flex items-center gap-4 mb-2">
                       <img src={sub.icon} alt="" className="h-8 w-8" />
                       <span className="text-xl font-semibold">{sub.title}</span>
+                    </div>
+                    <div className="absolute bottom-full mb-4 left-1/2 transform -translate-x-1/2 whitespace-pre-line rounded-lg bg-gray-900 text-white text-sm p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 max-w-md text-center">
+                      {sub.desc}
                     </div>
                   </Link>
                 ))}

@@ -3,37 +3,40 @@ import { Link } from 'react-router-dom';
 
 export default function Confidentialite({ lang }) {
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen p-8 text-center">
+    <div className="flex flex-col items-center min-h-screen pt-32 p-8 text-gray-800 dark:text-gray-300 bg-white dark:bg-black">
+      {/* ✅ Ajout de pt-32 = padding-top: 8rem (128px) pour descendre le contenu sous la navbar */}
+
       <Helmet>
         <title>{lang === 'fr' ? 'Politique de confidentialité - Rlyeh' : 'Privacy Policy - Rlyeh'}</title>
-        <meta name="description" content="Politique de confidentialité de Rlyeh SASU." />
+        <meta name="description" content="Notre politique de confidentialité pour la protection de vos données personnelles." />
       </Helmet>
 
-      <h1 className="text-4xl font-bold mb-6">
-        {lang === 'fr' ? "Politique de confidentialité" : "Privacy Policy"}
+      {/* Grand titre */}
+      <h1 className="text-5xl font-bold mb-8 text-center">
+        {lang === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'}
       </h1>
 
-      <div className="max-w-3xl text-justify text-base space-y-4 text-gray-700 dark:text-gray-300">
+      {/* Texte */}
+      <div className="max-w-3xl text-justify leading-relaxed space-y-6">
         {lang === 'fr' ? (
           <>
-            <p>Nous attachons une grande importance à la protection de vos données personnelles.</p>
-            <p>Les données collectées via notre formulaire de contact sont utilisées uniquement pour répondre à vos demandes et ne sont jamais revendues.</p>
-            <p>Nous utilisons également des cookies pour améliorer votre expérience et réaliser des statistiques anonymes via Google Analytics.</p>
-            <p>Vous pouvez exercer vos droits d’accès, de rectification, d’effacement et d’opposition à tout moment en écrivant à : contact@rlyeh.fr</p>
-            <p>En cas de réclamation, vous pouvez saisir la CNIL : https://www.cnil.fr/fr/plaintes</p>
+            <p>Nous attachons une importance particulière à la protection de vos données personnelles et au respect de votre vie privée.</p>
+            <p>Vos informations sont utilisées uniquement pour améliorer nos services et ne sont jamais vendues à des tiers.</p>
+            <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données.</p>
+            <p>Pour toute demande, contactez-nous à : <a href="mailto:contact@rlyeh.fr" className="text-blue-500 underline">contact@rlyeh.fr</a>.</p>
           </>
         ) : (
           <>
-            <p>We highly value the protection of your personal data.</p>
-            <p>Data collected via our contact form is used solely to respond to your inquiries and is never sold.</p>
-            <p>We also use cookies to improve your experience and perform anonymous statistics via Google Analytics.</p>
-            <p>You can exercise your rights of access, rectification, deletion, and opposition at any time by emailing: contact@rlyeh.fr</p>
-            <p>For complaints, you can contact the CNIL: https://www.cnil.fr/en/contact-cnil</p>
+            <p>We are committed to protecting your personal data and respecting your privacy.</p>
+            <p>Your information is used solely to improve our services and is never sold to third parties.</p>
+            <p>In accordance with GDPR, you have the right to access, correct, and delete your data at any time.</p>
+            <p>For any inquiries, contact us at: <a href="mailto:contact@rlyeh.fr" className="text-blue-400 underline">contact@rlyeh.fr</a>.</p>
           </>
         )}
       </div>
 
-      <Link to="/" className="mt-8 text-blue-500 hover:underline block text-sm">
+      {/* Lien retour */}
+      <Link to="/" className="mt-8 text-blue-500 hover:underline text-sm">
         ← {lang === 'fr' ? "Retour à l'accueil" : "Back to home"}
       </Link>
     </div>

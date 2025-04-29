@@ -5,9 +5,27 @@ import ImgConseil from '../img/_img01.webp';
 export default function Conseil({ lang }) {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen p-8 text-center">
+      {/* ✅ Bloc Helmet complet SEO */}
       <Helmet>
         <title>{lang === 'fr' ? 'Conseil stratégique - Rlyeh' : 'Strategic Consulting - Rlyeh'}</title>
-        <meta name="description" content="Optimisation des têtes de réseau et stratégies de diffusion." />
+        <meta name="description" content={lang === 'fr'
+          ? "Rlyeh vous accompagne dans l'optimisation de vos têtes de réseau et dans vos stratégies de diffusion."
+          : "Rlyeh assists you in optimizing your network heads and broadcast strategies."
+        } />
+        <link rel="canonical" href="https://www.rlyeh.fr/services/conseil" />
+        
+        {/* OpenGraph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={lang === 'fr'
+          ? "Conseil stratégique - Rlyeh"
+          : "Strategic Consulting - Rlyeh"
+        } />
+        <meta property="og:description" content={lang === 'fr'
+          ? "Optimisation des têtes de réseau, fibre optique, IP, Cloud, et diffusion OTT."
+          : "Optimization of headends, fiber optics, IP, Cloud, and OTT distribution."
+        } />
+        <meta property="og:url" content="https://www.rlyeh.fr/services/conseil" />
+        <meta property="og:image" content="https://www.rlyeh.fr/img/_img01.webp" />
       </Helmet>
 
       <img src={ImgConseil} alt="Conseil" className="w-96 h-auto mb-6 rounded-xl shadow-lg" />

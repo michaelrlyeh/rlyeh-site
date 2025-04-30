@@ -17,7 +17,7 @@ export default function Legal({ lang }) {
           <>
             <p>RLYEH SASU, société par actions simplifiée au capital de 2500€</p>
             <p>SIRET : 948 219 258 00027 — TVA Intra : FR90948219258</p>
-            <p>Siège social : Paris, France</p>
+            <p>Siège social : Chatillon, France</p>
             <p>Directeur de la publication : Michael Benhamou</p>
             <p>Hébergeur : IONOS SARL, 7 place de la Gare, 57200 Sarreguemines — France</p>
             <p>Pour toute question, contactez : <a href="mailto:contact@rlyeh.fr" className="text-blue-500 hover:underline">contact@rlyeh.fr</a></p>
@@ -26,7 +26,7 @@ export default function Legal({ lang }) {
           <>
             <p>RLYEH SASU, French simplified joint stock company with a capital of €2500</p>
             <p>SIRET: 948 219 258 00027 — VAT: FR90948219258</p>
-            <p>Headquarters: Paris, France</p>
+            <p>Headquarters: Chatillon, France</p>
             <p>Publication Director: Michael Benhamou</p>
             <p>Hosting: IONOS - 7 place de la Gare, 57200 Sarreguemines, France</p>
             <p>For any questions, contact: <a href="mailto:contact@rlyeh.fr" className="text-blue-500 hover:underline">contact@rlyeh.fr</a></p>

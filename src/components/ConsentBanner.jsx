@@ -1,6 +1,10 @@
-// === src/components/ConsentBanner.jsx ===
-
 import { useEffect, useState } from "react";
+
+// ✅ Export de la fonction pour usage externe
+export function resetConsent() {
+  localStorage.removeItem('cookie_consent');
+  window.location.reload(); // recharge la page pour afficher à nouveau le bandeau
+}
 
 export default function ConsentBanner({ lang }) {
   const [visible, setVisible] = useState(false);
@@ -32,7 +36,7 @@ export default function ConsentBanner({ lang }) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-WWN4PGZNEP'); // Ton ID Google Analytics
+    gtag('config', 'G-WWN4PGZNEP');
   };
 
   const refuseCookies = () => {

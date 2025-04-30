@@ -1,7 +1,6 @@
-// === src/components/Footer.jsx ===
-
 import { FaLinkedin } from 'react-icons/fa';
 import packageJson from '../../package.json';
+import { resetConsent } from './ConsentBanner'; // ✅ Import ajouté
 
 export default function Footer({ lang }) {
   const currentYear = new Date().getFullYear();
@@ -26,8 +25,13 @@ export default function Footer({ lang }) {
           <div>
             <p>TVA INTRA : FR 90948219258</p>
           </div>
-          <div>
-            <p>{lang === 'fr' ? 'Hébergement' : 'Hosting'} : IONOS, 7 PLACE DE LA GARE, 57200 SARREGUEMINES</p>
+
+          {/* ✅ Lien pour gérer le consentement */}
+          <div
+            className="mt-2 text-xs text-blue-500 hover:underline cursor-pointer"
+            onClick={resetConsent}
+          >
+            {lang === 'fr' ? "Gérer mes préférences de cookies" : "Manage cookie preferences"}
           </div>
         </div>
 

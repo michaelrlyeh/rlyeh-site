@@ -1,5 +1,3 @@
-// === src/components/HomeTiles.jsx ===
-
 import { Link } from 'react-router-dom';
 import ContactForm from "./ContactForm";
 import News from "./News";
@@ -95,7 +93,11 @@ const HomeTiles = ({ lang }) => {
             {tile.subsections && (
               <div className="flex flex-col gap-4 text-xl mt-4 w-full max-w-md relative z-10">
                 {tile.subsections.map((sub, idx) => (
-                  <Link to={sub.path} key={idx} className="group relative flex flex-col p-4 rounded-xl shadow-md bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer transition-transform hover:scale-105 active:scale-95">
+                  <Link
+                    to={sub.path}
+                    key={idx}
+                    className="group relative flex flex-col p-4 rounded-xl shadow-md bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer transition-transform hover:scale-105 active:scale-95"
+                  >
                     <div className="flex items-center gap-4 mb-2">
                       <img src={sub.icon} alt="" className="h-8 w-8" />
                       <span className="text-xl font-semibold">{sub.title}</span>

@@ -58,3 +58,15 @@ Ce projet utilise le format **SemVer** :
 - Correction des anomalies d'envoi de formulaire EmailJS en production.
 
 ---
+## [1.0.3] - 2024-XX-XX
+### Améliorations SEO
+- Ajout des balises `preload` pour améliorer le LCP
+- Déplacement du script Google Analytics en async différé via le bandeau de consentement
+- Optimisation des titres, descriptions et balises OpenGraph/Twitter
+- Intégration des données structurées Schema.org pour l'organisation
+- Ajout de l'attribut `alt` manquant sur les images principales
+- Configuration HTTPS et routage propre dans le `.htaccess`
+
+### Corrections
+- Résolution d’un bug de `page blanche` suite à un export incorrect du composant ConsentBanner
+- Amélioration responsive sur le formulaire de contact
